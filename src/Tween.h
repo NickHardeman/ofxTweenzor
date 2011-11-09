@@ -18,88 +18,43 @@
 class Tween {
 public:
 	
-	static const int COMPLETE	= 1;
-	static const int UPDATE		= 2;
-	
 	Tween() {};
 	
-	Tween(float* $property, float $begin, float $end, int $delay, int $duration, int $easeType, float $p=0, float $a=0);
-	Tween(float* $property, float $begin, float $end, float $delay, float $duration, int $easeType, float $p=0, float $a=0);
+	Tween(float* a_property, float a_begin, float a_end, int a_delay, int a_duration, int a_easeType, float a_p=0, float a_a=0);
+	Tween(float* a_property, int a_millis, float a_begin, float a_end, float a_delay, float a_duration, int a_easeType, float a_p=0, float a_a=0);
 	
-	void update();
+	void update(int a_millis);
 	void remove();
 	
 	bool complete();
 	bool running();
 	
 	void pause();
-	void resume();
-	void toggle();
-	void reset();
+	void resume(int a_millis);
+	void toggle(int a_millis);
+	void reset(int a_millis);
 	
 	float* getProperty();
 	float getPropertyValue();
 	float getPropertyPct();
 	void updateProperty();
 	float getTimePct();
-	void setTimePct(float $pct);
+	void setTimePct(float a_pct, int a_millis = 0);
 	
-	typedef TweenEvent<float> TweenEv; 
-	TweenEv completeEvent;
-	TweenEv updateEvent;
+	void setRepeat( int a_repeat, bool a_pingPong=false );
 	
-	template <class ListenerClass>
-	void addListener(int $event, ListenerClass *$listener, void (ListenerClass::*$listenerMethod)(float args)) {
-		switch ($event) {
-			case COMPLETE:
-				removeListener( COMPLETE );
-				completeEvent = new TweenEv::T<ListenerClass>($listener, $listenerMethod);
-				//if (completeEvent == true)
-					//cout << "completeEvent being added " << endl;
-				break;
-			case UPDATE:
-				removeListener( UPDATE );
-				updateEvent = new TweenEv::T<ListenerClass>($listener, $listenerMethod);
-				break;
-			default:
-				cout << "type of event not found" << endl;
-				break;
-		}
-	}
-	
-	void removeListener(int $event) {
-		switch ($event) {
-			case COMPLETE:
-				if (completeEvent == true) {
-					//cout << "Tween :: removeListener : there is a complete event" << endl;
-					completeEvent.destroy();
-					completeEvent = NULL;
-				}
-				break;
-			case UPDATE:
-				if (updateEvent == true) {
-					//cout << "Tween :: removeListener : there is a update event" << endl;
-					updateEvent.destroy();
-					updateEvent = NULL;
-				}
-				break;
-			default:
-				break;
-		}
-		
-	}
-	
-	void removeListeners() {removeListener( COMPLETE ); removeListener( UPDATE); };
+	unsigned int eventID;
 	
 	
 private:
-	void _setup(float* $property, float $begin, float $end, float $delay, float $duration, int $easeType, float $p, float $a);
+	void _setup(float* a_property, float a_begin, float a_end, float a_delay, float a_duration, int a_easeType, float a_p, float a_a);
 	
 	int _startTime;
 	
 	float _time, _duration, _delay;
 	
 	float _change, _begin, _end;
+	float _initBegin, _initEnd; // store these, since during a ping pong, we need to switch them //
 	
 	float _a, _p;
 	
@@ -107,12 +62,14 @@ private:
 	
 	int _easeType;
 	
+	int _repeatTotal; // -1 for unlimited, 0 is no repeat, which is default, 1 will run the first time and then again // 
+	int _repeatCount; // how many times has this thing repeated? //
+	bool _pingPong; // default: false; true = _begin -> _end, _end -> _begin..., as many times as repeat is set //
+	int _dir; // used for _pingPong; if 1 than _begin -> _end; if -1 then _end -> _start //
+	
 	bool _isComplete;
 	bool _isRunning;
 	bool _useSeconds;
-	
-	void _onComplete(float args);
-	void _onUpdate( float args );
 	
 	
 };
