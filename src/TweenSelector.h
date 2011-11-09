@@ -61,90 +61,90 @@
 class TweenSelector {
 public:
 	
-	static float getValueEase(float $t, float $b, float $c, float $d, int $easeType = 0, float $p = 0, float $a = 0) {
-		switch ($easeType) {
+	static float getValueEase(float a_t, float a_b, float a_c, float a_d, int a_easeType = 0, float a_p = 0, float a_a = 0) {
+		switch (a_easeType) {
 			case EASE_LINEAR:
-				return TweenFunctions::easeLinear($t, $b, $c, $d);
+				return TweenFunctions::easeLinear(a_t, a_b, a_c, a_d);
 				
 			case EASE_IN_QUAD:
-				return TweenFunctions::easeInQuad($t, $b, $c, $d);
+				return TweenFunctions::easeInQuad(a_t, a_b, a_c, a_d);
 			case EASE_OUT_QUAD:
-				return TweenFunctions::easeOutQuad($t, $b, $c, $d);
+				return TweenFunctions::easeOutQuad(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_QUAD:
-				return TweenFunctions::easeInOutQuad($t, $b, $c, $d);
+				return TweenFunctions::easeInOutQuad(a_t, a_b, a_c, a_d);
 		
 			case EASE_IN_CUBIC:
-				return TweenFunctions::easeInCubic($t, $b, $c, $d);
+				return TweenFunctions::easeInCubic(a_t, a_b, a_c, a_d);
 			case EASE_OUT_CUBIC:
-				return TweenFunctions::easeOutCubic($t, $b, $c, $d);
+				return TweenFunctions::easeOutCubic(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_CUBIC:
-				return TweenFunctions::easeInOutCubic($t, $b, $c, $d);
+				return TweenFunctions::easeInOutCubic(a_t, a_b, a_c, a_d);
 		
 			case EASE_IN_QUART:
-				return TweenFunctions::easeInQuart($t, $b, $c, $d);
+				return TweenFunctions::easeInQuart(a_t, a_b, a_c, a_d);
 			case EASE_OUT_QUART:
-				return TweenFunctions::easeOutQuart($t, $b, $c, $d);
+				return TweenFunctions::easeOutQuart(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_QUART:
-				return TweenFunctions::easeInOutQuart($t, $b, $c, $d);
+				return TweenFunctions::easeInOutQuart(a_t, a_b, a_c, a_d);
 				
 			case EASE_IN_QUINT:
-				return TweenFunctions::easeInQuint($t, $b, $c, $d);
+				return TweenFunctions::easeInQuint(a_t, a_b, a_c, a_d);
 			case EASE_OUT_QUINT:
-				return TweenFunctions::easeOutQuint($t, $b, $c, $d);
+				return TweenFunctions::easeOutQuint(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_QUINT:
-				return TweenFunctions::easeInOutQuint($t, $b, $c, $d);
+				return TweenFunctions::easeInOutQuint(a_t, a_b, a_c, a_d);
 				
 			case EASE_IN_SINE:
-				return TweenFunctions::easeInSine($t, $b, $c, $d);
+				return TweenFunctions::easeInSine(a_t, a_b, a_c, a_d);
 			case EASE_OUT_SINE:
-				return TweenFunctions::easeOutSine($t, $b, $c, $d);
+				return TweenFunctions::easeOutSine(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_SINE:
-				return TweenFunctions::easeInOutSine($t, $b, $c, $d);
+				return TweenFunctions::easeInOutSine(a_t, a_b, a_c, a_d);
 				
 			case EASE_IN_EXPO:
-				return TweenFunctions::easeInExpo($t, $b, $c, $d);
+				return TweenFunctions::easeInExpo(a_t, a_b, a_c, a_d);
 			case EASE_OUT_EXPO:
-				return TweenFunctions::easeOutExpo($t, $b, $c, $d);
+				return TweenFunctions::easeOutExpo(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_EXPO:
-				return TweenFunctions::easeInOutExpo($t, $b, $c, $d);
+				return TweenFunctions::easeInOutExpo(a_t, a_b, a_c, a_d);
 				
 			case EASE_IN_CIRC:
-				return TweenFunctions::easeInCirc($t, $b, $c, $d);
+				return TweenFunctions::easeInCirc(a_t, a_b, a_c, a_d);
 			case EASE_OUT_CIRC:
-				return TweenFunctions::easeOutCirc($t, $b, $c, $d);
+				return TweenFunctions::easeOutCirc(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_CIRC:
-				return TweenFunctions::easeInOutCirc($t, $b, $c, $d);
+				return TweenFunctions::easeInOutCirc(a_t, a_b, a_c, a_d);
 		
 			case EASE_IN_ELASTIC:
-				return TweenFunctions::easeInElastic($t, $b, $c, $d, $p, $a);
+				return TweenFunctions::easeInElastic(a_t, a_b, a_c, a_d, a_p, a_a);
 			case EASE_OUT_ELASTIC:
-				return TweenFunctions::easeOutElastic($t, $b, $c, $d, $p, $a);
+				return TweenFunctions::easeOutElastic(a_t, a_b, a_c, a_d, a_p, a_a);
 			case EASE_IN_OUT_ELASTIC:
-				return TweenFunctions::easeInOutElastic($t, $b, $c, $d, $p, $a);
+				return TweenFunctions::easeInOutElastic(a_t, a_b, a_c, a_d, a_p, a_a);
 			case EASE_OUT_IN_ELASTIC:
-				return TweenFunctions::easeOutInElastic($t, $b, $c, $d, $p, $a);
+				return TweenFunctions::easeOutInElastic(a_t, a_b, a_c, a_d, a_p, a_a);
 		
 			case EASE_IN_BACK:
-				return TweenFunctions::easeInBack($t, $b, $c, $d, $p);
+				return TweenFunctions::easeInBack(a_t, a_b, a_c, a_d, a_p);
 			case EASE_OUT_BACK:
-				return TweenFunctions::easeOutBack($t, $b, $c, $d, $p);
+				return TweenFunctions::easeOutBack(a_t, a_b, a_c, a_d, a_p);
 			case EASE_IN_OUT_BACK:
-				return TweenFunctions::easeInOutBack($t, $b, $c, $d, $p);
+				return TweenFunctions::easeInOutBack(a_t, a_b, a_c, a_d, a_p);
 			case EASE_OUT_IN_BACK:
-				return TweenFunctions::easeOutInBack($t, $b, $c, $d, $p);
+				return TweenFunctions::easeOutInBack(a_t, a_b, a_c, a_d, a_p);
 		
 		
 			case EASE_IN_BOUNCE:
-				return TweenFunctions::easeInBounce($t, $b, $c, $d);
+				return TweenFunctions::easeInBounce(a_t, a_b, a_c, a_d);
 			case EASE_OUT_BOUNCE:
-				return TweenFunctions::easeOutBounce($t, $b, $c, $d);
+				return TweenFunctions::easeOutBounce(a_t, a_b, a_c, a_d);
 			case EASE_IN_OUT_BOUNCE:
-				return TweenFunctions::easeInOutBounce($t, $b, $c, $d);
+				return TweenFunctions::easeInOutBounce(a_t, a_b, a_c, a_d);
 			case EASE_OUT_IN_BOUNCE:
-				return TweenFunctions::easeOutInBounce($t, $b, $c, $d);
+				return TweenFunctions::easeOutInBounce(a_t, a_b, a_c, a_d);
 				
 			default:
-				return TweenFunctions::easeLinear($t, $b, $c, $d);
+				return TweenFunctions::easeLinear(a_t, a_b, a_c, a_d);
 				break;
 				
 		}
