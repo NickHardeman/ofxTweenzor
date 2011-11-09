@@ -35,90 +35,90 @@
 
 class TweenFunctions {
 public:
-	static float easeLinear(float $t, float $b, float $c, float $d) {
-		return $c * $t/$d + $b;
+	static float easeLinear(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * a_t/a_d + a_b;
 	}
 	
-	static float easeInQuad(float $t, float $b, float $c, float $d) {
-		return $c * ($t /= $d) * $t + $b;
+	static float easeInQuad(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * (a_t /= a_d) * a_t + a_b;
 	}
-	static float easeOutQuad(float $t, float $b, float $c, float $d) {
-		return - $c * ($t /= $d) * ($t-2.f) + $b;
+	static float easeOutQuad(float a_t, float a_b, float a_c, float a_d) {
+		return - a_c * (a_t /= a_d) * (a_t-2.f) + a_b;
 	}
-	static float easeInOutQuad(float $t, float $b, float $c, float $d) {
-		if ( ($t /= $d/2.f) < 1.f) return $c/2.f * $t * $t + $b;
-		return -$c/2 * ( (--$t) * ($t-2.f) - 1.f) + $b;
-	}
-	
-	
-	static float easeInCubic(float $t, float $b, float $c, float $d) {
-		return $c * pow(($t / $d), 3) + $b;
-	}
-	static float easeOutCubic(float $t, float $b, float $c, float $d) {
-		return $c * (pow($t/$d-1.f, 3) + 1.f) + $b;
-	}
-	static float easeInOutCubic(float $t, float $b, float $c, float $d) {
-		if ( ($t/=$d/2) < 1.f) return $c/2.f * pow($t, 3) + $b;
-		return $c/2.f * (pow($t-2.f, 3) + 2.f) + $b;
+	static float easeInOutQuad(float a_t, float a_b, float a_c, float a_d) {
+		if ( (a_t /= a_d/2.f) < 1.f) return a_c/2.f * a_t * a_t + a_b;
+		return -a_c/2 * ( (--a_t) * (a_t-2.f) - 1.f) + a_b;
 	}
 	
 	
-	static float easeInQuart(float $t, float $b, float $c, float $d) {
-		return $c * pow($t/$d, 4) + $b;
+	static float easeInCubic(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * pow((a_t / a_d), 3) + a_b;
 	}
-	static float easeOutQuart(float $t, float $b, float $c, float $d) {
-		return -$c * (pow($t/$d-1, 4) - 1.f) + $b;
+	static float easeOutCubic(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * (pow(a_t/a_d-1.f, 3) + 1.f) + a_b;
 	}
-	static float easeInOutQuart(float $t, float $b, float $c, float $d) {
-		if ( ($t/=$d/2.f) < 1.f) return $c/2.f * pow($t, 4) + $b;
-		return -$c/2.f * (pow($t-2, 4) -2.f) + $b;
-	}
-	
-	
-	static float easeInQuint(float $t, float $b, float $c, float $d) {
-		return $c * pow($t/$d, 5) + $b;
-	}
-	static float easeOutQuint(float $t, float $b, float $c, float $d) {
-		return $c * (pow($t/$d-1, 5) + 1.f) + $b;
-	}
-	static float easeInOutQuint(float $t, float $b, float $c, float $d) {
-		if ( ($t/=$d/2.f) < 1.f) return $c/2 * pow($t, 5) + $b;
-		return $c/2 * (pow($t-2.f, 5) + 2.f) + $b;
+	static float easeInOutCubic(float a_t, float a_b, float a_c, float a_d) {
+		if ( (a_t/=a_d/2) < 1.f) return a_c/2.f * pow(a_t, 3) + a_b;
+		return a_c/2.f * (pow(a_t-2.f, 3) + 2.f) + a_b;
 	}
 	
 	
-	static float easeInSine(float $t, float $b, float $c, float $d) {
-		return $c * (1.f - cos($t/$d * HALF_PI)) + $b;
+	static float easeInQuart(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * pow(a_t/a_d, 4) + a_b;
 	}
-	static float easeOutSine(float $t, float $b, float $c, float $d) {
-		return $c * sin($t/$d * HALF_PI) + $b;
+	static float easeOutQuart(float a_t, float a_b, float a_c, float a_d) {
+		return -a_c * (pow(a_t/a_d-1, 4) - 1.f) + a_b;
 	}
-	static float easeInOutSine(float $t, float $b, float $c, float $d) {
-		return $c/2 * (1.f - cos(PI * $t/$d)) + $b;
-	}
-	
-	
-	static float easeInExpo(float $t, float $b, float $c, float $d) {
-		return $c * pow(2.f, 10.f * ($t/$d - 1.f)) + $b;
-	}
-	static float easeOutExpo(float $t, float $b, float $c, float $d) {
-		return $c * (-pow(2.f, -10.f * $t/$d) + 1.f) + $b;
-	}
-	static float easeInOutExpo(float $t, float $b, float $c, float $d) {
-		if ( ($t/=$d/2.f) < 1.f) return $c/2 * pow(2.f, 10.f * ($t - 1.f)) + $b;
-		return $c/2 * (-pow(2.f, -10.f * --$t) + 2.f) + $b;
+	static float easeInOutQuart(float a_t, float a_b, float a_c, float a_d) {
+		if ( (a_t/=a_d/2.f) < 1.f) return a_c/2.f * pow(a_t, 4) + a_b;
+		return -a_c/2.f * (pow(a_t-2, 4) -2.f) + a_b;
 	}
 	
 	
-	static float easeInCirc(float $t, float $b, float $c, float $d) {
-		return $c * (1.f - sqrt(1.f - ($t/=$d) * $t)) + $b;
+	static float easeInQuint(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * pow(a_t/a_d, 5) + a_b;
 	}
-	static float easeOutCirc(float $t, float $b, float $c, float $d) {
-		return $c * sqrt(1.f - ($t=$t/$d-1.f) * $t) + $b;
+	static float easeOutQuint(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * (pow(a_t/a_d-1, 5) + 1.f) + a_b;
 	}
-	static float easeInOutCirc(float $t, float $b, float $c, float $d) {
-		if ( ($t/=$d/2.f) < 1.f) return $c/2.f * (1.f - sqrt(1.f - $t * $t)) + $b;
-		return $c/2.f * (sqrt(1.f - ($t-=2.f) * $t) + 1.f) + $b;
+	static float easeInOutQuint(float a_t, float a_b, float a_c, float a_d) {
+		if ( (a_t/=a_d/2.f) < 1.f) return a_c/2 * pow(a_t, 5) + a_b;
+		return a_c/2 * (pow(a_t-2.f, 5) + 2.f) + a_b;
+	}
+	
+	
+	static float easeInSine(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * (1.f - cos(a_t/a_d * HALF_PI)) + a_b;
+	}
+	static float easeOutSine(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * sin(a_t/a_d * HALF_PI) + a_b;
+	}
+	static float easeInOutSine(float a_t, float a_b, float a_c, float a_d) {
+		return a_c/2 * (1.f - cos(PI * a_t/a_d)) + a_b;
+	}
+	
+	
+	static float easeInExpo(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * pow(2.f, 10.f * (a_t/a_d - 1.f)) + a_b;
+	}
+	static float easeOutExpo(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * (-pow(2.f, -10.f * a_t/a_d) + 1.f) + a_b;
+	}
+	static float easeInOutExpo(float a_t, float a_b, float a_c, float a_d) {
+		if ( (a_t/=a_d/2.f) < 1.f) return a_c/2 * pow(2.f, 10.f * (a_t - 1.f)) + a_b;
+		return a_c/2 * (-pow(2.f, -10.f * --a_t) + 2.f) + a_b;
+	}
+	
+	
+	static float easeInCirc(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * (1.f - sqrt(1.f - (a_t/=a_d) * a_t)) + a_b;
+	}
+	static float easeOutCirc(float a_t, float a_b, float a_c, float a_d) {
+		return a_c * sqrt(1.f - (a_t=a_t/a_d-1.f) * a_t) + a_b;
+	}
+	static float easeInOutCirc(float a_t, float a_b, float a_c, float a_d) {
+		if ( (a_t/=a_d/2.f) < 1.f) return a_c/2.f * (1.f - sqrt(1.f - a_t * a_t)) + a_b;
+		return a_c/2.f * (sqrt(1.f - (a_t-=2.f) * a_t) + 1.f) + a_b;
 	}
 	
 	
@@ -138,108 +138,108 @@ public:
 	 */
 	
 	
-	static float easeInElastic(float $t, float $b, float $c, float $d, float $p = 0, float $a = 0) {
-		if ($t==0) return $b;
-		if (($t/=$d)==1) return $b+$c;
-		$p = $p == 0 ? $d * .3 : $p;
-		float $s;
+	static float easeInElastic(float a_t, float a_b, float a_c, float a_d, float a_p = 0, float a_a = 0) {
+		if (a_t==0) return a_b;
+		if ((a_t/=a_d)==1) return a_b+a_c;
+		a_p = a_p == 0 ? a_d * .3 : a_p;
+		float a_s;
 		//float a = !Boolean(p_params) || isNaN(p_params.amplitude) ? 0 : p_params.amplitude;
-		float $a_c = $c < 0 ? $c * - 1 : $c;
-		if (!($a) || $a < $a_c) {
-			$a = $c;
-			$s = $p/4;
+		float a_a_c = a_c < 0 ? a_c * - 1 : a_c;
+		if (!(a_a) || a_a < a_a_c) {
+			a_a = a_c;
+			a_s = a_p/4;
 		} else {
-			$s = $p/(2*PI) * asin ($c/$a);
+			a_s = a_p/(2*PI) * asin (a_c/a_a);
 		}
-		return -($a*pow(2,10*($t-=1)) * sin( ($t*$d-$s)*(2*PI)/$p )) + $b;
+		return -(a_a*pow(2,10*(a_t-=1)) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )) + a_b;
 	}
-	static float easeOutElastic(float $t, float $b, float $c, float $d, float $p = 0, float $a = 0) {
-		if ($t==0) return $b;
-		if (($t/=$d)==1) return $b+$c;
+	static float easeOutElastic(float a_t, float a_b, float a_c, float a_d, float a_p = 0, float a_a = 0) {
+		if (a_t==0) return a_b;
+		if ((a_t/=a_d)==1) return a_b+a_c;
 		//float p = !Boolean(p_params) || isNaN(p_params.period) ? d*.3 : p_params.period;
-		$p = $p == 0 ? $d * .3 : $p;
-		float $s;
+		a_p = a_p == 0 ? a_d * .3 : a_p;
+		float a_s;
 		//float a = !Boolean(p_params) || isNaN(p_params.amplitude) ? 0 : p_params.amplitude;
-		float $a_c = $c < 0 ? $c * - 1 : $c;
-		if (!($a) || $a < $a_c) {
-			$a = $c;
-			$s = $p/4;
+		float a_a_c = a_c < 0 ? a_c * - 1 : a_c;
+		if (!(a_a) || a_a < a_a_c) {
+			a_a = a_c;
+			a_s = a_p/4;
 		} else {
-			$s = $p/(2*PI) * asin ($c/$a);
+			a_s = a_p/(2*PI) * asin (a_c/a_a);
 		}
-		return ($a*pow(2,-10*$t) *sin( ($t*$d-$s)*(2*PI)/$p ) + $c + $b);
+		return (a_a*pow(2,-10*a_t) *sin( (a_t*a_d-a_s)*(2*PI)/a_p ) + a_c + a_b);
 	}
-	static float easeInOutElastic(float $t, float $b, float $c, float $d, float $p = 0, float $a = 0) {
-		if ($t==0) return $b;
-		if (($t/=$d/2)==2) return $b+$c;
+	static float easeInOutElastic(float a_t, float a_b, float a_c, float a_d, float a_p = 0, float a_a = 0) {
+		if (a_t==0) return a_b;
+		if ((a_t/=a_d/2)==2) return a_b+a_c;
 		//var p:Number = !Boolean(p_params) || isNaN(p_params.period) ? d*(.3*1.5) : p_params.period;
-		$p = $p == 0 ? $d*(.3*1.5) : $p;
-		float $s;
+		a_p = a_p == 0 ? a_d*(.3*1.5) : a_p;
+		float a_s;
 		//var a:Number = !Boolean(p_params) || isNaN(p_params.amplitude) ? 0 : p_params.amplitude;
-		float $a_c = $c < 0 ? $c * - 1 : $c;
-		if (!($a) || $a < $a_c) {
-			$a = $c;
-			$s = $p/4;
+		float a_a_c = a_c < 0 ? a_c * - 1 : a_c;
+		if (!(a_a) || a_a < a_a_c) {
+			a_a = a_c;
+			a_s = a_p/4;
 		} else {
-			$s = $p/(2*PI) * asin ($c/$a);
+			a_s = a_p/(2*PI) * asin (a_c/a_a);
 		}
-		if ($t < 1) return -.5*($a*pow(2,10*($t-=1)) * sin( ($t*$d-$s)*(2*PI)/$p )) + $b;
-		return $a*pow(2,-10*($t-=1)) * sin( ($t*$d-$s)*(2*PI)/$p )*.5 + $c + $b;
+		if (a_t < 1) return -.5*(a_a*pow(2,10*(a_t-=1)) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )) + a_b;
+		return a_a*pow(2,-10*(a_t-=1)) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )*.5 + a_c + a_b;
 	}
-	static float easeOutInElastic(float $t, float $b, float $c, float $d, float $p = 0, float $a = 0) {
-		if ($t < $d/2) return easeOutElastic ($t*2, $b, $c/2, $d, $p, $a);
-		return easeInElastic(($t*2)-$d, $b+$c/2, $c/2, $d, $p, $a);
+	static float easeOutInElastic(float a_t, float a_b, float a_c, float a_d, float a_p = 0, float a_a = 0) {
+		if (a_t < a_d/2) return easeOutElastic (a_t*2, a_b, a_c/2, a_d, a_p, a_a);
+		return easeInElastic((a_t*2)-a_d, a_b+a_c/2, a_c/2, a_d, a_p, a_a);
 	}
 	
 	
-	static float easeInBack(float $t, float $b, float $c, float $d, float $p = 0) {
+	static float easeInBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		// var s:Number = !Boolean(p_params) || isNaN(p_params.overshoot) ? 1.70158 : p_params.overshoot;
-		$p = $p == 0 ? 1.70158 : $p;
-		return $c*($t/=$d)*$t*(($p+1)*$t - $p) + $b;
+		a_p = a_p == 0 ? 1.70158 : a_p;
+		return a_c*(a_t/=a_d)*a_t*((a_p+1)*a_t - a_p) + a_b;
 	}
-	static float easeOutBack(float $t, float $b, float $c, float $d, float $p = 0) {
+	static float easeOutBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		//var s:Number = !Boolean(p_params) || isNaN(p_params.overshoot) ? 1.70158 : p_params.overshoot;
-		$p = $p == 0 ? 1.70158 : $p;
-		return $c*(($t=$t/$d-1)*$t*(($p+1)*$t + $p) + 1) + $b;
+		a_p = a_p == 0 ? 1.70158 : a_p;
+		return a_c*((a_t=a_t/a_d-1)*a_t*((a_p+1)*a_t + a_p) + 1) + a_b;
 	}
-	static float easeInOutBack(float $t, float $b, float $c, float $d, float $p = 0) {
+	static float easeInOutBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		//var s:Number = !Boolean(p_params) || isNaN(p_params.overshoot) ? 1.70158 : p_params.overshoot;
-		$p = $p == 0 ? 1.70158 : $p;
-		if (($t/=$d/2) < 1) return $c/2*($t*$t*((($p*=(1.525))+1)*$t - $p)) + $b;
-		return $c/2*(($t-=2)*$t*((($p*=(1.525))+1)*$t + $p) + 2) + $b;
+		a_p = a_p == 0 ? 1.70158 : a_p;
+		if ((a_t/=a_d/2) < 1) return a_c/2*(a_t*a_t*(((a_p*=(1.525))+1)*a_t - a_p)) + a_b;
+		return a_c/2*((a_t-=2)*a_t*(((a_p*=(1.525))+1)*a_t + a_p) + 2) + a_b;
 	}
-	static float easeOutInBack(float $t, float $b, float $c, float $d, float $p = 0) {
-		if ($t < $d/2) return easeOutBack($t*2, $b, $c/2, $d, $p);
-		return easeInBack(($t*2)-$d, $b+$c/2, $c/2, $d, $p);
-	}
-	
-	
-	
-	
-	static float easeInBounce(float $t, float $b, float $c, float $d) {
-		return $c - easeOutBounce ($d-$t, 0, $c, $d) + $b;
+	static float easeOutInBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
+		if (a_t < a_d/2) return easeOutBack(a_t*2, a_b, a_c/2, a_d, a_p);
+		return easeInBack((a_t*2)-a_d, a_b+a_c/2, a_c/2, a_d, a_p);
 	}
 	
-	static float easeOutBounce(float $t, float $b, float $c, float $d) {
-		if (($t/=$d) < (1/2.75)) {
-			return $c*(7.5625*$t*$t) + $b;
-		} else if ($t < (2/2.75)) {
-			return $c*(7.5625*($t-=(1.5/2.75))*$t + .75) + $b;
-		} else if ($t < (2.5/2.75)) {
-			return $c*(7.5625*($t-=(2.25/2.75))*$t + .9375) + $b;
+	
+	
+	
+	static float easeInBounce(float a_t, float a_b, float a_c, float a_d) {
+		return a_c - easeOutBounce (a_d-a_t, 0, a_c, a_d) + a_b;
+	}
+	
+	static float easeOutBounce(float a_t, float a_b, float a_c, float a_d) {
+		if ((a_t/=a_d) < (1/2.75)) {
+			return a_c*(7.5625*a_t*a_t) + a_b;
+		} else if (a_t < (2/2.75)) {
+			return a_c*(7.5625*(a_t-=(1.5/2.75))*a_t + .75) + a_b;
+		} else if (a_t < (2.5/2.75)) {
+			return a_c*(7.5625*(a_t-=(2.25/2.75))*a_t + .9375) + a_b;
 		} else {
-			return $c*(7.5625*($t-=(2.625/2.75))*$t + .984375) + $b;
+			return a_c*(7.5625*(a_t-=(2.625/2.75))*a_t + .984375) + a_b;
 		}
 	}
 	
-	static float easeInOutBounce(float $t, float $b, float $c, float $d) {
-		if ($t < $d/2) return easeInBounce ($t*2, 0, $c, $d) * .5 + $b;
-		else return easeOutBounce ($t*2-$d, 0, $c, $d) * .5 + $c*.5 + $b;
+	static float easeInOutBounce(float a_t, float a_b, float a_c, float a_d) {
+		if (a_t < a_d/2) return easeInBounce (a_t*2, 0, a_c, a_d) * .5 + a_b;
+		else return easeOutBounce (a_t*2-a_d, 0, a_c, a_d) * .5 + a_c*.5 + a_b;
 	}
 	
-	static float easeOutInBounce(float $t, float $b, float $c, float $d) {
-		if ($t < $d/2) return easeOutBounce ($t*2, $b, $c/2, $d);
-		return easeInBounce(($t*2)-$d, $b+$c/2, $c/2, $d);
+	static float easeOutInBounce(float a_t, float a_b, float a_c, float a_d) {
+		if (a_t < a_d/2) return easeOutBounce (a_t*2, a_b, a_c/2, a_d);
+		return easeInBounce((a_t*2)-a_d, a_b+a_c/2, a_c/2, a_d);
 	}
 	
 };
