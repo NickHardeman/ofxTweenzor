@@ -311,7 +311,7 @@ Tween* Tweenzor::getRecentTween() {
 
 //--------------------------------------------------------------
 int Tweenzor::getSize() {
-	__instance->_tweens.size();
+	return __instance->_tweens.size();
 }
 
 
