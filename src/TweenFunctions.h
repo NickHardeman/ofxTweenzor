@@ -40,14 +40,17 @@ public:
 	}
 	
 	static float easeInQuad(float a_t, float a_b, float a_c, float a_d) {
-		return a_c * (a_t /= a_d) * a_t + a_b;
+    a_t /= a_d;
+		return a_c * a_t * a_t + a_b;
 	}
 	static float easeOutQuad(float a_t, float a_b, float a_c, float a_d) {
-		return - a_c * (a_t /= a_d) * (a_t-2.f) + a_b;
+    a_t /= a_d;
+		return - a_c * a_t * (a_t-2.f) + a_b;
 	}
 	static float easeInOutQuad(float a_t, float a_b, float a_c, float a_d) {
 		if ( (a_t /= a_d/2.f) < 1.f) return a_c/2.f * a_t * a_t + a_b;
-		return -a_c/2 * ( (--a_t) * (a_t-2.f) - 1.f) + a_b;
+    --a_t;
+		return -a_c/2 * ( a_t * (a_t-2.f) - 1.f) + a_b;
 	}
 	
 	
@@ -111,14 +114,17 @@ public:
 	
 	
 	static float easeInCirc(float a_t, float a_b, float a_c, float a_d) {
-		return a_c * (1.f - sqrt(1.f - (a_t/=a_d) * a_t)) + a_b;
+    a_t /= a_d;
+		return a_c * (1.f - sqrt(1.f - a_t * a_t)) + a_b;
 	}
 	static float easeOutCirc(float a_t, float a_b, float a_c, float a_d) {
-		return a_c * sqrt(1.f - (a_t=a_t/a_d-1.f) * a_t) + a_b;
+    a_t=a_t/a_d-1.f;
+		return a_c * sqrt(1.f - a_t * a_t) + a_b;
 	}
 	static float easeInOutCirc(float a_t, float a_b, float a_c, float a_d) {
 		if ( (a_t/=a_d/2.f) < 1.f) return a_c/2.f * (1.f - sqrt(1.f - a_t * a_t)) + a_b;
-		return a_c/2.f * (sqrt(1.f - (a_t-=2.f) * a_t) + 1.f) + a_b;
+    a_t-=2.f;
+		return a_c/2.f * (sqrt(1.f - a_t * a_t) + 1.f) + a_b;
 	}
 	
 	
@@ -151,7 +157,8 @@ public:
 		} else {
 			a_s = a_p/(2*PI) * asin (a_c/a_a);
 		}
-		return -(a_a*pow(2,10*(a_t-=1)) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )) + a_b;
+    a_t-=1;
+		return -(a_a*pow(2,10*a_t) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )) + a_b;
 	}
 	static float easeOutElastic(float a_t, float a_b, float a_c, float a_d, float a_p = 0, float a_a = 0) {
 		if (a_t==0) return a_b;
@@ -183,8 +190,9 @@ public:
 		} else {
 			a_s = a_p/(2*PI) * asin (a_c/a_a);
 		}
-		if (a_t < 1) return -.5*(a_a*pow(2,10*(a_t-=1)) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )) + a_b;
-		return a_a*pow(2,-10*(a_t-=1)) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )*.5 + a_c + a_b;
+    a_t-=1;
+		if (a_t < 0) return -.5*(a_a*pow(2,10*a_t) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )) + a_b;
+		return a_a*pow(2,-10*a_t) * sin( (a_t*a_d-a_s)*(2*PI)/a_p )*.5 + a_c + a_b;
 	}
 	static float easeOutInElastic(float a_t, float a_b, float a_c, float a_d, float a_p = 0, float a_a = 0) {
 		if (a_t < a_d/2) return easeOutElastic (a_t*2, a_b, a_c/2, a_d, a_p, a_a);
@@ -195,18 +203,22 @@ public:
 	static float easeInBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		// var s:Number = !Boolean(p_params) || isNaN(p_params.overshoot) ? 1.70158 : p_params.overshoot;
 		a_p = a_p == 0 ? 1.70158 : a_p;
-		return a_c*(a_t/=a_d)*a_t*((a_p+1)*a_t - a_p) + a_b;
+    a_t/=a_d;
+		return a_c*a_t*a_t*((a_p+1)*a_t - a_p) + a_b;
 	}
 	static float easeOutBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		//var s:Number = !Boolean(p_params) || isNaN(p_params.overshoot) ? 1.70158 : p_params.overshoot;
 		a_p = a_p == 0 ? 1.70158 : a_p;
-		return a_c*((a_t=a_t/a_d-1)*a_t*((a_p+1)*a_t + a_p) + 1) + a_b;
+    a_t=a_t/a_d-1;
+		return a_c*(a_t*a_t*((a_p+1)*a_t + a_p) + 1) + a_b;
 	}
 	static float easeInOutBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		//var s:Number = !Boolean(p_params) || isNaN(p_params.overshoot) ? 1.70158 : p_params.overshoot;
 		a_p = a_p == 0 ? 1.70158 : a_p;
-		if ((a_t/=a_d/2) < 1) return a_c/2*(a_t*a_t*(((a_p*=(1.525))+1)*a_t - a_p)) + a_b;
-		return a_c/2*((a_t-=2)*a_t*(((a_p*=(1.525))+1)*a_t + a_p) + 2) + a_b;
+    a_p*=(1.525);
+		if ((a_t/=a_d/2) < 1) return a_c/2*(a_t*a_t*((a_p+1)*a_t - a_p)) + a_b;
+    a_t-=2;
+		return a_c/2*(a_t*a_t*((a_p+1)*a_t + a_p) + 2) + a_b;
 	}
 	static float easeOutInBack(float a_t, float a_b, float a_c, float a_d, float a_p = 0) {
 		if (a_t < a_d/2) return easeOutBack(a_t*2, a_b, a_c/2, a_d, a_p);
@@ -224,11 +236,14 @@ public:
 		if ((a_t/=a_d) < (1/2.75)) {
 			return a_c*(7.5625*a_t*a_t) + a_b;
 		} else if (a_t < (2/2.75)) {
-			return a_c*(7.5625*(a_t-=(1.5/2.75))*a_t + .75) + a_b;
+      a_t-=(1.5/2.75);
+			return a_c*(7.5625*a_t * a_t + .75) + a_b;
 		} else if (a_t < (2.5/2.75)) {
-			return a_c*(7.5625*(a_t-=(2.25/2.75))*a_t + .9375) + a_b;
+      a_t-=(2.25/2.75);
+			return a_c*(7.5625*a_t * a_t + .9375) + a_b;
 		} else {
-			return a_c*(7.5625*(a_t-=(2.625/2.75))*a_t + .984375) + a_b;
+      a_t-=(2.625/2.75);
+      return a_c*(7.5625*a_t * a_t + .984375) + a_b;
 		}
 	}
 	
