@@ -68,7 +68,7 @@ void Tweenzor::update(int a_millis) {
 		
 	}
 	
-	for(int i = 0; i < eventsToFire.size(); i++) {
+	for(unsigned int i = 0; i < eventsToFire.size(); i++) {
 		//cout << "Tweenzor :: update : eventsToFire["<<eventsToFire[i] << "] arg = " << *eventArgs[i] << endl;
 		//__instance->_events[eventsToFire[i]]( eventArgs[i] );
 		int evindex = getEventIndexForID( eventsToFire[i] );
@@ -111,7 +111,7 @@ void Tweenzor::add(float* a_property, float a_begin, float a_end, float a_delay,
 
 //--------------------------------------------------------------
 void Tweenzor::add(vector <float *> a_properties, float a_begin, float a_end, float a_delay, float a_duration, int a_easeType, float a_p, float a_a) {
-	for (int i = 0; i < a_properties.size(); i++) {
+	for (unsigned int i = 0; i < a_properties.size(); i++) {
 		add(a_properties[i], a_begin, a_end, a_delay, a_duration, a_easeType, a_p, a_a);
 	}
 }
@@ -127,7 +127,7 @@ void Tweenzor::add( TweenParams& a_params ) {
 
 //--------------------------------------------------------------
 void Tweenzor::add( vector<TweenParams>& a_params ) {
-	for(int i = 0; i < a_params.size(); i++) {
+	for(unsigned int i = 0; i < a_params.size(); i++) {
 		add( a_params[i] );
 	}
 }
@@ -165,7 +165,7 @@ Tween* Tweenzor::getTween( float* a_property ) {
 int Tweenzor::getEventIndexForTween( Tween* a_tween ) {
 	if(a_tween == NULL) return -1;
 	unsigned int evid = a_tween->eventID;
-	for(int i = 0; i < __instance->_events.size(); i++) {
+	for(unsigned int i = 0; i < __instance->_events.size(); i++) {
 		if( (__instance->_events[i].getID()) == evid ) {
 			return i;
 			break;
@@ -178,7 +178,7 @@ int Tweenzor::getEventIndexForTween( Tween* a_tween ) {
 int Tweenzor::getEventIDForTween( Tween* a_tween ) {
 	if(a_tween == NULL) return -1;
 	unsigned int evid = a_tween->eventID;
-	for(int i = 0; i < __instance->_events.size(); i++) {
+	for(unsigned int i = 0; i < __instance->_events.size(); i++) {
 		if( (__instance->_events[i].getID()) == evid ) {
 			return __instance->_events[i].getID();
 			break;
@@ -189,7 +189,7 @@ int Tweenzor::getEventIDForTween( Tween* a_tween ) {
 
 //--------------------------------------------------------------
 int Tweenzor::getEventIndexForID( int a_eventID ) {
-	for(int i = 0; i < __instance->_events.size(); i++) {
+	for(unsigned int i = 0; i < __instance->_events.size(); i++) {
 		if( (__instance->_events[i].getID()) == a_eventID ) {
 			return i;
 		}
@@ -201,7 +201,7 @@ int Tweenzor::getEventIndexForID( int a_eventID ) {
 void Tweenzor::removeCompleteListener( Tween* a_tween ) {
 	if(a_tween == NULL) return;
 	unsigned int evid = a_tween->eventID;
-	for(int i = 0; i < __instance->_events.size(); i++) {
+	for(unsigned int i = 0; i < __instance->_events.size(); i++) {
 		if( (__instance->_events[i].getID()) == evid ) {
 			if(__instance->_events[i] == true) {
 				__instance->_events[i].destroy();
@@ -220,7 +220,7 @@ void Tweenzor::removeCompleteListener( float* a_property ) {
 
 //--------------------------------------------------------------
 void Tweenzor::removeCompleteListener( int a_eventID ) {
-	for(int i = 0; i < __instance->_events.size(); i++) {
+	for(unsigned int i = 0; i < __instance->_events.size(); i++) {
 		if( (__instance->_events[i].getID()) == a_eventID ) {
 			__instance->_events[i].destroy();
 			__instance->_events[i] = NULL;
@@ -237,7 +237,7 @@ void Tweenzor::removeAllListeners() {
 
 //--------------------------------------------------------------
 void Tweenzor::removeAllTweens() {
-	for(int i = 0; i < __instance->_events.size(); i++) {
+	for(unsigned int i = 0; i < __instance->_events.size(); i++) {
 		__instance->_events[i].destroy();
 		__instance->_events[i] = NULL;
 	}
@@ -307,6 +307,7 @@ Tween* Tweenzor::getRecentTween() {
 	if (__instance->_tweens.size() > 0) {
 		return &__instance->_tweens[__instance->_tweens.size() - 1];
 	}
+  return 0;
 }
 
 //--------------------------------------------------------------
