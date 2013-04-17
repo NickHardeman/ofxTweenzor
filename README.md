@@ -1,7 +1,8 @@
-ofxTweenzor v 2.0
-C++ Tweening Library
+#ofxTweenzor v 2.0
+##C++ Tweening Library
 
 Features:
+--------
 * Complete events with small footprint
 * Ping pongning
 * Repeat tweens
@@ -9,6 +10,7 @@ Features:
 * OpenFrameworks 007 Examples!
 
 Updates:
+--------
 * Fixed memory allocation issue!
 * Re-worked event structure, so getting tweens and adding listeners is different than previous version
 * Complete event now returns pointer to the variable
