@@ -11,6 +11,8 @@ Features:
 
 Updates:
 --------
+* Added ofFloatColor, ofVec2f, ofVec3f, ofVec4f and ofRectangle tweenable properties (@tiagosr)
+
 * Fixed memory allocation issue!
 * Re-worked event structure, so getting tweens and adding listeners is different than previous version
 * Complete event now returns pointer to the variable
