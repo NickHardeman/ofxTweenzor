@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EEF75DA146AD01700CD0026 /* Tween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF75D1146AD01700CD0026 /* Tween.cpp */; };
-		2EEF75DB146AD01700CD0026 /* Tweenzor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF75D6146AD01700CD0026 /* Tweenzor.cpp */; };
+		2EEF76A0146AD9AA00CD0026 /* Tween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7697146AD9AA00CD0026 /* Tween.cpp */; };
+		2EEF76A1146AD9AA00CD0026 /* Tweenzor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF769C146AD9AA00CD0026 /* Tweenzor.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
-		E4328149138ABC9F0047C5CB /* openFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworks.a */; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
 		E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */; };
@@ -59,14 +59,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2EEF75D0146AD01700CD0026 /* ofxTweenzor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTweenzor.h; sourceTree = "<group>"; };
-		2EEF75D1146AD01700CD0026 /* Tween.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tween.cpp; sourceTree = "<group>"; };
-		2EEF75D2146AD01700CD0026 /* Tween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tween.h; sourceTree = "<group>"; };
-		2EEF75D3146AD01700CD0026 /* TweenEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweenEvent.h; sourceTree = "<group>"; };
-		2EEF75D4146AD01700CD0026 /* TweenFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweenFunctions.h; sourceTree = "<group>"; };
-		2EEF75D5146AD01700CD0026 /* TweenSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweenSelector.h; sourceTree = "<group>"; };
-		2EEF75D6146AD01700CD0026 /* Tweenzor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tweenzor.cpp; sourceTree = "<group>"; };
-		2EEF75D7146AD01700CD0026 /* Tweenzor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweenzor.h; sourceTree = "<group>"; };
+		2EEF7696146AD9AA00CD0026 /* ofxTweenzor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTweenzor.h; sourceTree = "<group>"; };
+		2EEF7697146AD9AA00CD0026 /* Tween.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tween.cpp; sourceTree = "<group>"; };
+		2EEF7698146AD9AA00CD0026 /* Tween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tween.h; sourceTree = "<group>"; };
+		2EEF7699146AD9AA00CD0026 /* TweenEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweenEvent.h; sourceTree = "<group>"; };
+		2EEF769A146AD9AA00CD0026 /* TweenFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweenFunctions.h; sourceTree = "<group>"; };
+		2EEF769B146AD9AA00CD0026 /* TweenSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweenSelector.h; sourceTree = "<group>"; };
+		2EEF769C146AD9AA00CD0026 /* Tweenzor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tweenzor.cpp; sourceTree = "<group>"; };
+		2EEF769D146AD9AA00CD0026 /* Tweenzor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweenzor.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -96,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
-				E4328149138ABC9F0047C5CB /* openFrameworks.a in Frameworks */,
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -115,26 +115,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EEF7552146AD01700CD0026 /* ofxTweenzor */ = {
+		2EEF7618146AD9AA00CD0026 /* ofxTweenzor */ = {
 			isa = PBXGroup;
 			children = (
-				2EEF75CF146AD01700CD0026 /* src */,
+				2EEF7695146AD9AA00CD0026 /* src */,
 			);
 			name = ofxTweenzor;
 			path = ../../../addons/ofxTweenzor;
 			sourceTree = SOURCE_ROOT;
 		};
-		2EEF75CF146AD01700CD0026 /* src */ = {
+		2EEF7695146AD9AA00CD0026 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				2EEF75D0146AD01700CD0026 /* ofxTweenzor.h */,
-				2EEF75D1146AD01700CD0026 /* Tween.cpp */,
-				2EEF75D2146AD01700CD0026 /* Tween.h */,
-				2EEF75D3146AD01700CD0026 /* TweenEvent.h */,
-				2EEF75D4146AD01700CD0026 /* TweenFunctions.h */,
-				2EEF75D5146AD01700CD0026 /* TweenSelector.h */,
-				2EEF75D6146AD01700CD0026 /* Tweenzor.cpp */,
-				2EEF75D7146AD01700CD0026 /* Tweenzor.h */,
+				2EEF7696146AD9AA00CD0026 /* ofxTweenzor.h */,
+				2EEF7697146AD9AA00CD0026 /* Tween.cpp */,
+				2EEF7698146AD9AA00CD0026 /* Tween.h */,
+				2EEF7699146AD9AA00CD0026 /* TweenEvent.h */,
+				2EEF769A146AD9AA00CD0026 /* TweenFunctions.h */,
+				2EEF769B146AD9AA00CD0026 /* TweenSelector.h */,
+				2EEF769C146AD9AA00CD0026 /* Tweenzor.cpp */,
+				2EEF769D146AD9AA00CD0026 /* Tweenzor.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				2EEF7552146AD01700CD0026 /* ofxTweenzor */,
+				2EEF7618146AD9AA00CD0026 /* ofxTweenzor */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 		E4328144138ABC890047C5CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4328148138ABC890047C5CB /* openFrameworks.a */,
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,7 +250,9 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "SimpleExample" */;
+			attributes = {
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "AdvancedExample" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -277,10 +279,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E4328148138ABC890047C5CB /* openFrameworks.a */ = {
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = openFrameworks.a;
+			path = openFrameworksDebug.a;
 			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -309,8 +311,8 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
-				2EEF75DA146AD01700CD0026 /* Tween.cpp in Sources */,
-				2EEF75DB146AD01700CD0026 /* Tweenzor.cpp in Sources */,
+				2EEF76A0146AD9AA00CD0026 /* Tween.cpp in Sources */,
+				2EEF76A1146AD9AA00CD0026 /* Tweenzor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +466,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SimpleExampleDebug;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -550,6 +553,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SimpleExample;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -557,7 +561,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "SimpleExample" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "AdvancedExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
