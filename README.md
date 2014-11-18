@@ -11,6 +11,7 @@ Features:
 
 Updates:
 --------
+* Rearranged folders to addon structure, may have broken visual studio project.
 * Added ofFloatColor, ofVec2f, ofVec3f, ofVec4f and ofRectangle tweenable properties (@tiagosr)
 
 * Fixed memory allocation issue!
