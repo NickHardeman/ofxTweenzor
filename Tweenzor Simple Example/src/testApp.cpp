@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
-	ofSetFrameRate(60);
+    ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 	
 	// must call this before adding any tweens //
@@ -39,7 +39,7 @@ void testApp::setup() {
 	Tweenzor::getTween( &_x1 )->setRepeat( 1, true );
 	// let's add a listener so we know when this tween is done //
 	Tweenzor::addCompleteListener( Tweenzor::getTween(&_x1), this, &testApp::onComplete);
-	
+
 }
 
 //--------------------------------------------------------------
@@ -81,13 +81,13 @@ void testApp::onComplete(float* arg) {
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
-	Tweenzor::update( ofGetElapsedTimeMillis() );
+void testApp::update(){
+    Tweenzor::update( ofGetElapsedTimeMillis() );
 }
 
 //--------------------------------------------------------------
-void testApp::draw() {
-	ofSetColor(100, 100, 100);
+void testApp::draw(){
+    ofSetColor(100, 100, 100);
 	for (int i = 0; i < 10; i++) {
 		float yPos = (float)i * 50 + 50;
 		ofLine(0, yPos, ofGetWidth(), yPos);
@@ -127,7 +127,7 @@ void testApp::exit() {
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-	if (key == ' ') {
+    if (key == ' ') {
 		paused = !paused;
 		Tweenzor::toggleAllTweens();
 	} else if (key == 'r') {
@@ -144,7 +144,7 @@ void testApp::keyReleased(int key){
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
+void testApp::mouseMoved(int x, int y){
 
 }
 
@@ -168,3 +168,12 @@ void testApp::windowResized(int w, int h){
 
 }
 
+//--------------------------------------------------------------
+void testApp::gotMessage(ofMessage msg){
+
+}
+
+//--------------------------------------------------------------
+void testApp::dragEvent(ofDragInfo dragInfo){ 
+
+}

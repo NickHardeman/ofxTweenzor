@@ -79,6 +79,7 @@ apps/*
 # XCode 4
 xcuserdata
 *.xcworkspace
+xcshareddata
 
 # Code::Blocks
 *.depend

@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
-	ofSetFrameRate(60);
+    ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 	ofBackground(40);
 	// must call this before adding any tweens //
@@ -58,9 +58,11 @@ void testApp::setup() {
 	Tweenzor::add(&_x10, 100.f, 255.f, 0.f, 3.f);
 	// set this to -1 to repeat forever //
 	Tweenzor::getTween( &_x10 )->setRepeat( -1, true );
+
 }
 
 //--------------------------------------------------------------
+// this function is called on when the tween is complete //
 void testApp::onComplete(float* arg) {
 	//cout << "testApp :: onComplete : arg = " << *arg << endl;
 	float _tarX = 0.f;
@@ -81,7 +83,7 @@ void testApp::onComplete(float* arg) {
 		// update the params //
 		params.begin	= *params.property;
 		params.end		= ofRandom(11, 200);
-		params.duration = ofRandom(.3, 1.1);	
+		params.duration = ofRandom(.3, 1.1);
 		Tweenzor::add( params );
 		Tweenzor::addCompleteListener( Tweenzor::getTween(&_x2), this, &testApp::onComplete);
 	} else if (arg == &_x4) {
@@ -105,13 +107,13 @@ void testApp::onComplete(float* arg) {
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
-	Tweenzor::update( ofGetElapsedTimeMillis() );
+void testApp::update(){
+    Tweenzor::update( ofGetElapsedTimeMillis() );
 }
 
 //--------------------------------------------------------------
-void testApp::draw() {
-	ofSetColor(100, 100, 100);
+void testApp::draw(){
+    ofSetColor(100, 100, 100);
 	
 	
 	ofDrawBitmapString("hit space to toggle all tweens\nhit r to reset tweens", 20, ofGetHeight()-80);
@@ -151,7 +153,7 @@ void testApp::exit() {
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-	if (key == ' ') {
+    if (key == ' ') {
 		paused = !paused;
 		Tweenzor::toggleAllTweens();
 	} else if (key == 'r') {
@@ -168,7 +170,7 @@ void testApp::keyReleased(int key){
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
+void testApp::mouseMoved(int x, int y){
 
 }
 
@@ -192,3 +194,12 @@ void testApp::windowResized(int w, int h){
 
 }
 
+//--------------------------------------------------------------
+void testApp::gotMessage(ofMessage msg){
+
+}
+
+//--------------------------------------------------------------
+void testApp::dragEvent(ofDragInfo dragInfo){ 
+
+}
