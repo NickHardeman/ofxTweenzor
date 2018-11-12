@@ -17,7 +17,7 @@ Updates:
 * Fixed memory allocation issue!
 * Re-worked event structure, so getting tweens and adding listeners is different than previous version
 * Complete event now returns pointer to the variable
-* added update( millis ) to make it platform independent ( but only tested in OpenFrameworks )
+* added update( millis )
 * added some more examples
 * ping ponging capable
 * can define number of times to repeat a tween before firing a complete event
