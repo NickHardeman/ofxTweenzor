@@ -1,7 +1,7 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup() {
+void ofApp::setup() {
     ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 	
@@ -38,13 +38,13 @@ void testApp::setup() {
 	
 	Tweenzor::getTween( &_x1 )->setRepeat( 1, true );
 	// let's add a listener so we know when this tween is done //
-	Tweenzor::addCompleteListener( Tweenzor::getTween(&_x1), this, &testApp::onComplete);
+	Tweenzor::addCompleteListener( Tweenzor::getTween(&_x1), this, &ofApp::onComplete);
 
 }
 
 //--------------------------------------------------------------
 // this function is called on when the tween is complete //
-void testApp::onComplete(float* arg) {
+void ofApp::onComplete(float* arg) {
 	cout << "testApp :: onComplete : arg = " << *arg << endl;
 	float _tarX = 0.f;
 	float _begin = 0.f;
@@ -63,7 +63,7 @@ void testApp::onComplete(float* arg) {
 	Tweenzor::add( &_x1, _begin, _tarX, 0.f, 2.f );
 	
 	// add the complete listener again so that it will fire again, creating a loop //
-	Tweenzor::addCompleteListener( Tweenzor::getTween(&_x1), this, &testApp::onComplete);
+	Tweenzor::addCompleteListener( Tweenzor::getTween(&_x1), this, &ofApp::onComplete);
 	
 	Tweenzor::add(&_x2, _x2, _tarX, 0.f, 2.f, EASE_IN_OUT_SINE);
 	Tweenzor::add(&_x3, _x3, _tarX, 0.f, 2.f, EASE_IN_OUT_QUAD);
@@ -81,16 +81,16 @@ void testApp::onComplete(float* arg) {
 }
 
 //--------------------------------------------------------------
-void testApp::update(){
+void ofApp::update(){
     Tweenzor::update( ofGetElapsedTimeMillis() );
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void ofApp::draw(){
     ofSetColor(100, 100, 100);
 	for (int i = 0; i < 10; i++) {
 		float yPos = (float)i * 50 + 50;
-		ofLine(0, yPos, ofGetWidth(), yPos);
+		ofDrawLine(0, yPos, ofGetWidth(), yPos);
 	}
 	
 	ofDrawBitmapString("LINEAR", 20, 47);
@@ -108,25 +108,25 @@ void testApp::draw(){
 	
 	
 	ofSetColor(255, 0, 0);
-	ofCircle(_x1, 50, 10);
-	ofCircle(_x2, 100, 10);
-	ofCircle(_x3, 150, 10);
-	ofCircle(_x4, 200, 10);
-	ofCircle(_x5, 250, 10);
-	ofCircle(_x6, 300, 10);
-	ofCircle(_x7, 350, 10);
-	ofCircle(_x8, 400, 10);
-	ofCircle(_x9, 450, 10);
-	ofCircle(_x10, 500, 10);
+	ofDrawCircle(_x1, 50, 10);
+	ofDrawCircle(_x2, 100, 10);
+	ofDrawCircle(_x3, 150, 10);
+	ofDrawCircle(_x4, 200, 10);
+	ofDrawCircle(_x5, 250, 10);
+	ofDrawCircle(_x6, 300, 10);
+	ofDrawCircle(_x7, 350, 10);
+	ofDrawCircle(_x8, 400, 10);
+	ofDrawCircle(_x9, 450, 10);
+	ofDrawCircle(_x10, 500, 10);
 }
 
 //--------------------------------------------------------------
-void testApp::exit() {
+void ofApp::exit() {
 	Tweenzor::destroy();
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key){
+void ofApp::keyPressed(int key){
     if (key == ' ') {
 		paused = !paused;
 		Tweenzor::toggleAllTweens();
@@ -139,41 +139,8 @@ void testApp::keyPressed(int key){
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key){
+void ofApp::keyReleased(int key){
 
 }
 
-//--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y){
 
-}
-
-//--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
-}
